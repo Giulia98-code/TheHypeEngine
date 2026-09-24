@@ -155,27 +155,6 @@
             color: #fff;
             margin-top: 2px;
         }
-
-        .buy-btn {
-            background: linear-gradient(135deg, #9146FF, #ff0055);
-            color: #fff;
-            border: none;
-            padding: 12px 28px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-radius: 20px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 15px rgba(145, 70, 255, 0.4);
-        }
-
-        .buy-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(145, 70, 255, 0.8);
-        }
     </style>
 </head>
 <body>
@@ -186,7 +165,7 @@
             <p>Museum Exhibition View</p>
         </header>
 
-        <!-- Riquadro pulito con l'opera d'arte generativa -->
+        <!-- Riquadro pulito con l'opera d'arte generativa (senza scritte/HUD interni) -->
         <div class="video-box">
             <canvas id="c"></canvas>
         </div>
@@ -197,7 +176,7 @@
             <div class="plaque-details">Generative Digital Installation &bull; Unique Edition 1/1</div>
         </div>
 
-        <!-- Sezione acquisto in inglese con offerta a tempo -->
+        <!-- Sezione acquisto con il form PayPal ufficiale -->
         <div class="purchase-card">
             <div class="artwork-description">
                 The Hype Engine is a high-velocity generative digital installation exploring contemporary internet culture, kinetic typography, and luminous core dynamics. Designed specifically for high-end digital displays as a strict 1/1 collector's piece.
@@ -215,8 +194,14 @@
                     </div>
                     <span class="price-tag">€100.00</span>
                 </div>
-                <!-- Sostituisci il cancelletto '#' con il link del tuo prodotto su Gumroad -->
-                <a href="#" class="buy-btn" target="_blank">Purchase Artwork</a>
+
+                <!-- Pulsante di pagamento PayPal integrato -->
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_s-xclick" />
+                  <input type="hidden" name="hosted_button_id" value="F538GNQU4TUN6" />
+                  <input type="hidden" name="currency_code" value="EUR" />
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online" alt="Buy Now" />
+                </form>
             </div>
         </div>
     </div>
